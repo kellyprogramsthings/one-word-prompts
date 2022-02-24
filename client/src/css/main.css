@@ -28,6 +28,10 @@ a:hover {
   text-decoration: underline;
 }
 
+.links {
+  text-align: center;
+}
+
 .todays-owp {
   text-align: center;
   font-size: 3em;
@@ -41,4 +45,9 @@ a:hover {
 
 .todays-header {
   text-align: center;
+}
+
+div.card {
+  margin-top: 2em;
+  padding: 1em;
 }
