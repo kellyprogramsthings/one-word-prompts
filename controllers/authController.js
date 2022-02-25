@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt';
-import _ from 'lodash';
+// import _ from 'lodash';
 import authService from "../services/authService.js";
 
 const login = async (req, res) => {

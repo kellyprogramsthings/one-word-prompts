@@ -1,4 +1,4 @@
-import _ from "lodash";
+// import _ from "lodash";
 
 export const errorCatch = (e, externalMessage) => {
   // I googled what it says when you catch a Pokemon

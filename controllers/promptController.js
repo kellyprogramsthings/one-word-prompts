@@ -1,4 +1,4 @@
-import _ from 'lodash';
+// import _ from 'lodash';
 import { PromptService } from '../classes/promptService.js';
 
 const promptService = new PromptService;
@@ -15,6 +15,7 @@ const getPrompt = async (req, res) => {
 }
 
 const getTodaysPrompt = async (req, res) => {
+  console.log("got here");
   const prompt = await promptService.getTodaysPrompt();
   if (prompt) {
     return res.status(200).json(prompt);

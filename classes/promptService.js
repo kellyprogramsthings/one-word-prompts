@@ -1,5 +1,5 @@
 import Prisma from "@prisma/client";
-import _ from "lodash";
+// import _ from "lodash";
 
 const { PrismaClient } = Prisma;
 const prisma = new PrismaClient();
@@ -25,12 +25,12 @@ export class PromptService {
   }
 
   async getTodaysPrompt() {
+    console.log("got to another here");
     const today = new Date(new Date().setHours(0,0,0,0));
     let currentPrompt = await prisma.promptHistory.findFirst({
       take: 1, orderBy: { createdAt: "desc" }
     });
-    if (!currentPrompt) {return;}
-    if (currentPrompt.createdAt < today) {
+    if (!currentPrompt || currentPrompt.createdAt < today) {
       const newPrompt = await this.getPromptNotInRecentPrompts();
       currentPrompt = await this.saveToPromptHistory(newPrompt.id);
     }
