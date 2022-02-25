@@ -1,7 +1,6 @@
 import { Fragment, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Card, Container, Col, Input, Row } from "reactstrap";
-import { toast } from "react-toastify";
 import { login } from "../utils/auth";
 
 const Login = (props) => {
@@ -25,12 +24,10 @@ const Login = (props) => {
 
     login(username, password).then(
       isLoggedIn => {
-        if (isLoggedIn === true) { // not just exists
-          toast("You have successfully logged in.", {autoClose: 3000});
+        if (isLoggedIn === true) {
           navigate("/");
         }
         else {
-          toast(isLoggedIn.message, {autoClose: 3000});
           setLoading(false);
         }
       }

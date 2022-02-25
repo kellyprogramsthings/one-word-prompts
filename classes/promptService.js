@@ -29,12 +29,13 @@ export class PromptService {
     let currentPrompt = await prisma.promptHistory.findFirst({
       take: 1, orderBy: { createdAt: "desc" }
     });
+    if (!currentPrompt) {return;}
     if (currentPrompt.createdAt < today) {
       const newPrompt = await this.getPromptNotInRecentPrompts();
       currentPrompt = await this.saveToPromptHistory(newPrompt.id);
     }
     const newPrompt = await prisma.prompt.findUnique({ 
-      where: { id: currentPrompt.promptId } 
+      where: { id: currentPrompt?.promptId } 
     });
     return newPrompt;
   }
