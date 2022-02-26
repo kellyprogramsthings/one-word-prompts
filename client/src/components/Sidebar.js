@@ -19,24 +19,16 @@ const Sidebar = ({ children }) => {
               <Nav vertical className="nav-links">
                 <hr />
                 <NavItem>
-                  <NavLink href="/about">
-                    About
-                  </NavLink>
+                  <Link to="/about">About</Link>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/previousprompts">
-                    Previous Prompts
-                  </NavLink>
+                  <Link to="/previousprompts">Previous Prompts</Link>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="">
-                    Prompt Generator
-                  </NavLink>
+                  <Link to="">Prompt Generator</Link>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="">
-                    Similar Sites
-                  </NavLink>
+                  <Link to="">Similar Sites</Link>
                 </NavItem>
               </Nav>
               {/* </UncontrolledCollapse> */}
