@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "reactstrap";
-import api from "../utils/api";
+import api from "../utils/api"
 import { errorCatch } from "../utils/helpers";
 
 let apiUrl = "todaysprompt";
@@ -26,11 +26,11 @@ const Main = () => {
 
   return (
     <Container>
-      <Row>
+      <Row className="justify-content-center">
         <Col>
-          <Card>
+          <Card className="todays-card">
             <Row className="todays-header">
-              <Col>Today's One Word Prompt</Col>
+              <Col>Today's Prompt</Col>
             </Row>
             <Row className="todays-owp">
               <Col>{todaysPrompt.name}</Col>
@@ -50,29 +50,36 @@ const Main = () => {
           </Card>
         </Col>
       </Row>
-      {/* <Row>
-        <Col xs="12" sm="12" md="6">
-          <Card>
-            <Row className="todays-header">
-              <Col>Today's Phrase Prompt</Col>
-            </Row>
-            <Row className="todays-other-prompt">
-              <Col>Phrase here</Col>
-            </Row>
+      <Row className="justify-content-center">
+        <Col>
+          <Card className="heroku-message">
+            This site is powered by Heroku, please give it a moment to wake up.
           </Card>
         </Col>
-        <Col xs="12" sm="12" md="6">
-          <Card>
-            <Row className="todays-header">
-              <Col>Today's Lyric (or something) Prompt</Col>
-            </Row>
-            <Row className="todays-other-prompt">
-              <Col>Lyrics or whatev here</Col>
-            </Row>
-          </Card>
-        </Col>
-      </Row> */}
+      </Row>
     </Container>
+    /* <Row>
+      <Col xs="12" sm="12" md="6">
+        <Card>
+          <Row className="todays-header">
+            <Col>Today's Phrase Prompt</Col>
+          </Row>
+          <Row className="todays-other-prompt">
+            <Col>Phrase here</Col>
+          </Row>
+        </Card>
+      </Col>
+      <Col xs="12" sm="12" md="6">
+        <Card>
+          <Row className="todays-header">
+            <Col>Today's Lyric (or something) Prompt</Col>
+          </Row>
+          <Row className="todays-other-prompt">
+            <Col>Lyrics or whatev here</Col>
+          </Row>
+        </Card>
+      </Col>
+    </Row> */
   );
 };
 

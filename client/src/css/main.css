@@ -29,6 +29,7 @@ a:hover {
 }
 
 .links {
+  font-weight: bold;
   text-align: center;
 }
 
@@ -45,9 +46,19 @@ a:hover {
 
 .todays-header {
   text-align: center;
+  font-weight: bold;
 }
 
 div.card {
   margin-top: 2em;
   padding: 1em;
+}
+
+.heroku-message {
+  font-size: smaller;
+  text-align: center;
+}
+
+.nav-links {
+  font-weight: bold;
 }

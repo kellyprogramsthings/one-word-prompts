@@ -1,8 +1,10 @@
 import Prisma from "@prisma/client";
-// import _ from "lodash";
+import _ from "lodash";
 
 const { PrismaClient } = Prisma;
 const prisma = new PrismaClient();
+
+const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
 export class PromptService {
   async getPrompt(id) {
@@ -25,7 +27,6 @@ export class PromptService {
   }
 
   async getTodaysPrompt() {
-    console.log("got to another here");
     const today = new Date(new Date().setHours(0,0,0,0));
     let currentPrompt = await prisma.promptHistory.findFirst({
       take: 1, orderBy: { createdAt: "desc" }
@@ -38,6 +39,25 @@ export class PromptService {
       where: { id: currentPrompt?.promptId } 
     });
     return newPrompt;
+  }
+
+  async getMultiDayPrompts(numDays = 90) {
+    // we'll just shift off the one for today rather
+    //   than messing with dates
+    let prompts = await prisma.promptHistory.findMany({
+      include: {
+        prompt: true
+      },
+      take: numDays + 1, 
+      orderBy: { createdAt: "desc" }
+    });
+    prompts.shift();
+    prompts = _.map(prompts, p => {
+      const newDate = new Date(p.createdAt.toDateString())
+      const formattedDate = newDate.toLocaleDateString("en-US", options);
+      return { id: p.id, promptId: p.promptId, date: formattedDate, promptName: p.prompt.name }
+    })
+    return prompts;
   }
 
   async saveToPromptHistory(id) {
