@@ -15,7 +15,6 @@ const PreviousPrompts = () => {
     api.get(api.baseUrl + "/multiDayPrompts")
       .then(r => {
         if (r.status === 200) {
-          console.log(r);
           setPreviousPrompts(r.data);
         }
       })
