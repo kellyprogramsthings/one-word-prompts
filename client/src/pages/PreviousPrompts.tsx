@@ -1,8 +1,14 @@
 import { useEffect, useState } from "react";
 import { Card, Col, Container, Row, Table } from "reactstrap";
-import _ from "lodash";
+import * as _ from "lodash";
 import api from "../utils/api";
 import { errorCatch } from "../utils/helpers";
+
+interface prompt {
+  id: number,
+  date: Date,
+  promptName: string
+}
 
 const PreviousPrompts = () => {
   const [previousPrompts, setPreviousPrompts] = useState([]);
@@ -30,8 +36,8 @@ const PreviousPrompts = () => {
           <Card>
             <Table>
               <tbody>
-                {_.map(previousPrompts, p => {
-                  return <tr key={p.id}><td>{p.date}</td><td>{p.promptName}</td></tr>;
+                {_.map(previousPrompts, (p: prompt) => {
+                  return(<tr key={p.id}><td>{p.date}</td><td>{p.promptName}</td></tr>);
                 })}
               </tbody>
             </Table>

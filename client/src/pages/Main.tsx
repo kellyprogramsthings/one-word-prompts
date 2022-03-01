@@ -6,7 +6,7 @@ import { errorCatch } from "../utils/helpers";
 let apiUrl = "todaysprompt";
 
 const Main = () => {
-  const [todaysPrompt, setTodaysPrompt] = useState("");
+  const [todaysPrompt, setTodaysPrompt] = useState({name: ""});
 
   useEffect(() => {
     getCurrentPrompt();
@@ -58,28 +58,6 @@ const Main = () => {
         </Col>
       </Row>
     </Container>
-    /* <Row>
-      <Col xs="12" sm="12" md="6">
-        <Card>
-          <Row className="todays-header">
-            <Col>Today's Phrase Prompt</Col>
-          </Row>
-          <Row className="todays-other-prompt">
-            <Col>Phrase here</Col>
-          </Row>
-        </Card>
-      </Col>
-      <Col xs="12" sm="12" md="6">
-        <Card>
-          <Row className="todays-header">
-            <Col>Today's Lyric (or something) Prompt</Col>
-          </Row>
-          <Row className="todays-other-prompt">
-            <Col>Lyrics or whatev here</Col>
-          </Row>
-        </Card>
-      </Col>
-    </Row> */
   );
 };
 

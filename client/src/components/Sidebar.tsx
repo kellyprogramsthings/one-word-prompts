@@ -1,7 +1,12 @@
+import * as React from "react"
 import { Link } from "react-router-dom";
 import { Card, Col, Container, Nav, Navbar, NavItem, Row } from "reactstrap";
 
-const Sidebar = ({ children }) => {
+type props = {
+  children: React.ReactNode;
+}
+
+const Sidebar = ({ children }: props) => {
   // TODO: collapse for mobile
 
   return (
