@@ -22,7 +22,7 @@ export class PromptService {
       WHERE ph.created_at <= ${thirtyDays}
         OR ph.id IS NULL
       ORDER BY random() 
-      LIMIT 1`;
+      LIMIT 1;`;
     return chosenPrompt[0];
   }
 
@@ -42,8 +42,7 @@ export class PromptService {
   }
 
   async getMultiDayPrompts(numDays = 90) {
-    // we'll just shift off the one for today rather
-    //   than messing with dates
+    // we'll just shift off the one for today rather than messing with dates
     let prompts = await prisma.promptHistory.findMany({
       include: {
         prompt: true
@@ -58,6 +57,10 @@ export class PromptService {
       return { id: p.id, promptId: p.promptId, date: formattedDate, promptName: p.prompt.name }
     })
     return prompts;
+  }
+
+  async getRandomPrompt() {
+    return getPromptNotInRecentPrompts();
   }
 
   async saveToPromptHistory(id) {

@@ -3,6 +3,7 @@ import express, { json } from "express";
 import cors from "cors";
 import router from "./router.js";
 
+
 // var whitelist = ["https://one-word-prompts.netlify.app", "http://localhost:3000"]
 // var corsOptions = {
 //   origin: function (origin, callback) {
