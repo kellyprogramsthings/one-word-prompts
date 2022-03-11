@@ -36,7 +36,7 @@ export class PromptService {
       currentPrompt = await this.saveToPromptHistory(newPrompt.id);
     }
     const newPrompt = await prisma.prompt.findUnique({ 
-      where: { id: currentPrompt?.promptId } 
+      where: { id: currentPrompt.promptId } 
     });
     return newPrompt;
   }
