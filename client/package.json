@@ -5,6 +5,9 @@
   "resolutions": {
     "react-error-overlay": "6.0.9"
   },
+  "engines": {
+    "node": "16.x"
+  },
   "dependencies": {
     "@babel/polyfill": "~7.12.1",
     "@fortawesome/fontawesome-free": "~5.15.4",

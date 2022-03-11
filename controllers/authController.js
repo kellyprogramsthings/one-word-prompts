@@ -13,7 +13,7 @@ const login = async (req, res) => {
       return res.json({ accessToken: token, user: { id: user.id, username: user.username } });
     }
   }
-  return res.json({ message: "Username or Password is incorrect." });
+  return res.json({ message: "Username and/or Password is incorrect." });
 }
 
 const attachCurrentUser = async (req, res, next) => {
