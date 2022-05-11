@@ -1,11 +1,4 @@
 :root {
-  /* red */
-  /* --lighterColor: #ff8787;
-  --lightColor: #ff4242;
-  --mediumColor: #c90000;
-  --darkColor: #730000;
-  --darkerColor: #300000; */
-
   /* green */
   --lighterColor: #e5ffef;
   --lightColor: #bdffd6;
@@ -61,4 +54,8 @@ div.card {
 
 .nav-links {
   font-weight: bold;
+}
+
+.button-reload {
+  background-color: var(--darkColor);
 }

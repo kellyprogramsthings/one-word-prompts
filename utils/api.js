@@ -17,7 +17,6 @@ const api = {
   baseUrl,
   get,
   post,
-  passThrough
 };
 
 export default api;

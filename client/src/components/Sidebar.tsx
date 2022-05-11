@@ -25,10 +25,10 @@ const Sidebar = ({ children }: props) => {
                   <Link to="/previousprompts">Previous Prompts</Link>
                 </NavItem>
                 <NavItem>
-                  <Link to="">Prompt Generator</Link>
+                  <Link to="/randomprompt">Prompt Generator</Link>
                 </NavItem>
                 <NavItem>
-                  <Link to="">Other Prompt Sites</Link>
+                  <Link to="/othersites">Other Prompt Sites</Link>
                 </NavItem>
               </Nav>
             </Navbar>
