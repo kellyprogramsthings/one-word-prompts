@@ -50,13 +50,6 @@ const Main = () => {
           </Card>
         </Col>
       </Row>
-      <Row className="justify-content-center">
-        <Col>
-          <Card className="heroku-message">
-            This site is powered by Heroku, please give it a moment to wake up.
-          </Card>
-        </Col>
-      </Row>
     </Container>
   );
 };
